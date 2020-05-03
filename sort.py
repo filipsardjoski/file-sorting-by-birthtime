@@ -13,18 +13,18 @@ def main(argv):
   try:
     opts, args = getopt.getopt(argv,"hi:o:")
   except getopt.GetoptError:
-    print 'photo-sorting.py -i <inputfile> -o <outputfile>'
+    print 'sort.py -i <inputfile> -o <outputfile>'
     sys.exit(2)
   for opt, arg in opts:
     if opt == '-h':
-      print 'photo-sorting.py -i <inputfile> -o <outputfile>'
+      print 'sort.py -i <inputfile> -o <outputfile>'
       sys.exit()
     elif opt in ("-i", "--ifile"):
       inputfile = arg
     elif opt in ("-o", "--ofile"):
       outputfile = arg
   if inputfile == '' or outputfile == '':
-    print 'photo-sorting.py -i <inputfile> -o <outputfile>'
+    print 'sort.py -i <inputfile> -o <outputfile>'
     sys.exit()
 
   allFiles = [f for f in listdir(inputfile) if isfile(join(inputfile, f)) and not f.startswith(".")]
